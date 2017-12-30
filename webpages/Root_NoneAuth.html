@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>ESP8266 WIFI Relay Control Page</title>
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+    <style>body{padding-top:25px;padding-bottom:20px}.header{border-bottom:1px solid #e5e5e5;margin-bottom:0;color:#D4AC0D}
+      .jumbotron{text-align:center}.marketing{margin:40px 0}
+      .arduino h4{font-size:22px;color:#2ecc71;margin-top:20px;padding-right:10px;padding-left:0; display:inline-block;}
+      .arduino h5{font-size:16px;color:#E74C3C;margin-top:15px;padding-right:0;padding-left:0px; display:inline-block;}
+      .arduino h6{font-size:16px;color:#2ecc71;margin-top:15px;padding-right:0;padding-left:0px; display:inline-block;}
+      .clear{ clear:both;}
+      .align-center {text-align:center;}
+    </style>
+  </head>
+  <body style='background-color:#E8F8F5'>
+    <div class='container align-center'>
+      <div class='header'>
+        <h1>Welcome to Litmath, WiFi Relay</h1>
+      </div>
+        <form action='/login' method='POST'>
+            <div class='container'>
+                <div class='row arduino'>
+                    <div class='col-lg-12'>
+                        <div class='clear'></div>
+                        <h4>Enter Password:</h4>
+                        <h4><input type='password' name='PASS' placeholder='Password hint'></h4>
+                        <h4><input type='submit' value='Login'></h4>
+                        <div class='clear'></div>
+                        <h4>Password Hint WifiRelay123456.</h4>
+                        <div class='clear'></div>
+                        <h5>Invliad Password, Enter Correct password.</h5>
+                        <h6>Forgotten password? No problem. Hardware reset to default passwords is available. <br /> Hold IO port active during power-up and watch the blue light at the board blinking during power up. Keep holding the IO active for 4 seconds after the blue light stops blinking and release. The most simple way to activate IO is to connect 9V battery to the IO terminals (observe polarity). Use longer wires to avoid interference caused by hands touching the board. You can use also the power source at the board but keep in mind that grounds are separated for the board and IO terminals. <br /> Default password is 'WifiRelay123456' for the board and 'Litmath123' for the AdHoc WiFi network.</h6>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+      <div class='row arduino'>
+        <div class='col-lg-12'>
+            <div class='clear'></div>
+            <br /><br /><br /><br />
+            <br /><br />
+
+
+                <h6> <a href='http://www.litmath.com'>Visit our web site Litmath, LLC</a></h6>
+                &nbsp&nbsp&nbsp&nbsp
+                <h6> Copyright Litmath, LLC, 2017 </h6>
+</div>
+      </div>
+    </div>
+  </body>
+</html>

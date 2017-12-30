@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>ESP8266 WIFI Relay Control Page</title>
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+    <style>body{padding-top:25px;padding-bottom:20px}.header{border-bottom:1px solid #e5e5e5;margin-bottom:0;color:#D4AC0D}
+      .jumbotron{text-align:center}.marketing{margin:40px 0}
+      .arduino h4{font-size:22px;color:#2ecc71;margin-top:20px;padding-right:10px;padding-left:0; display:inline-block;}
+      .arduino h5{font-size:16px;color:#E74C3C;margin-top:15px;padding-right:0;padding-left:0px; display:inline-block;}
+      .arduino h6{font-size:16px;color:#2ecc71;margin-top:15px;padding-right:0;padding-left:0px; display:inline-block;}
+      .clear{ clear:both;}
+      .align-center {text-align:center;}
+    </style>
+  </head>
+  <body style='background-color:#E8F8F5'>
+    <div class='container align-center'>
+      <div class='header'>
+        <h1>Welcome to Litmath, WiFi Relay</h1>
+      </div>
+        <form action='/RelayName' method='POST'>
+            <div class='container'>
+                <div class='row arduino'>
+                    <div class='col-lg-12'>
+                        <div class='clear'></div>
+                        <h6></h6>
+                        <div class='clear'></div>
+                        <h6>Current Relay Name is IV_129077988908.</h6>
+                        <div class='clear'></div>
+                        <h6>Change the name?(option)</h6>
+                        <h5><input type='text' name='NewName'></h5>
+                        <h6><input type='submit' value='Save'></h6>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form action='/Pass' method='POST'>
+            <div class='container'>
+                <div class='row arduino'>
+                    <div class='col-lg-12'>
+                        <div class='header'></div>
+                        <div class='clear'></div>
+                        <h4>Password Setting</h4>
+
+                        <div class='clear'></div>
+                        <h6 style='width:140px;'>Current Password</h6>
+                        <h5><input type='password' name='ppo'></h5>
+
+                        <div class='clear'></div>
+                        <h6 style='width:140px;'>New Password</h6>
+                        <h5><input type='password' name='pp'></h5>
+
+                        <div class='clear'></div>
+                        <h6 style='width:140px;'>Confirm Password</h6>
+                        <h5><input type='password' name='ppc'></h5>
+
+                        <div class='clear'></div>
+                        <h6 style='width:140px;'>Password Hint</h6>
+                        <h5><input type='text' name='pph'></h5>
+
+                        <div class='clear'></div>
+                        <h6><input type='submit' value='Save'></h6>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <form action='/Port' method='POST'>
+            <div class='container'>
+                <div class='row arduino'>
+                    <div class='col-lg-12'>
+                        <div class='header'></div>
+                        <div class='clear'></div>
+                        <h6>Port Setting</h6>
+
+                        <div class='clear'></div>
+                        <h6>Http Port</h6>
+                        <h5><input type='text' name='http' value='80'></h5>
+
+                        <h6>Tcp Port</h6>
+                        <h5><input type='text' name='tcp' value='8000'></h5>
+
+                        <h6><input type='submit' value='Save'></h6>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form action='/Client' method='POST'>
+            <div class='container'>
+                <div class='row arduino'>
+                    <div class='col-lg-12'>
+                        <div class='header'>
+                        </div>
+                        <div class='clear'></div>
+                        <h6>TCP Connection Setting</h6>
+
+                        <div class='clear'></div>
+                        <h6>Server IP</h6>
+                        <h5><input type='text' name='IP' value='192.168.1.138'></h5>
+
+                        <h6>Server Port</h6>
+                        <h5><input type='text' name='Port' value='7000'></h5>
+
+                        <h6><input type='submit' value='Save'></h6>
+                    </div>
+                </div>
+            </div>
+        </form>
+            <form action='/Mode' method='POST'>
+                <div class='container'>
+                    <div class='row arduino'>
+                        <div class='col-lg-12'>
+                            <div class='header'></div>
+                            <div class='clear'></div>
+                            <h4>Mode of operation</h4>
+
+                            <div class='clear'></div>
+                            <h6>Control Mode</h6>
+                            <h5>
+                                <select name='Choice'>
+                                    <option value='1'>Normal Mode</option>
+                                    <option value='2'>IO Control Mode</option>
+                                    <option value='3'>Schedule1 Mode</option>
+                                    <option value='4' selected='selected'>Schedule2 Mode</option>
+                                    <option value='5'>Schedule3 Mode</option>
+                                </select>
+                            </h5>
+                            <h6>Parameter1</h6>
+                            <h5>
+                                <select name='p1'>
+                                    <option value='0'>Pos</option>
+                                    <option value='1'>Neg</option>
+                                </select>
+                            </h5>
+                            <h6>Parameter2</h6>
+                            <h5>
+                                <select name='p2'>
+                                    <option value='0'>None</option>
+                                    <option value='1'>On</option>
+                                    <option value='2'>Off</option>
+                                </select>
+                            </h5>
+                            <h6><input type='submit' value='Save'></h6>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action='/MQTT' method='POST'>
+                <div class='container'>
+                    <div class='row arduino'>
+                        <div class='col-lg-12'>
+                            <div class='header'>
+                            </div>
+                            <div class='header'></div>
+                            <div class='clear'></div>
+                            <h6>Mqtt Setting</h6>
+                            <div class='clear'></div>
+                            <h6>Mqtt Server</h6>&nbsp
+                            <h5><input type='text' name='server' value='192.168.4.1'></h5>
+                            &nbsp&nbsp&nbsp&nbsp
+                            <h6>Port</h6>&nbsp
+                            <h5><input type='text' name='Port' value='1883'></h5>
+                            &nbsp&nbsp&nbsp&nbsp
+                            <h6>Input</h6>&nbsp
+                            <h5><input type='text' name='Input' value=''></h5>
+                            <h6>Output</h6>&nbsp
+                            <h5><input type='text' name='Output' value=''></h5>
+                            <h5><input type='submit' value='Save'></h5>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <form action='/Time' method='POST'>
+                <div class='container'>
+                    <div class='row arduino'>
+                        <div class='col-lg-12'>
+                            <div class='header'></div>
+                            <h6>Location and Datetime Setting</h6>
+                            <div class='clear'></div>
+                            <h6>Current DateTime</h6>
+                            <h6>
+                                <input type='datetime-local' name='currtime' value='2014-11-16T15:25:33' step='1'>
+                            </h6>
+                            <h5>
+                                <select name='Location'>
+                                    <option value='1'>Location1</option>
+                                    <option value='2'>Location2</option>
+                                    <option value='3'>Location3</option>
+                                    <option value='4'>Location4</option>
+                                    <option value='5'>Location5</option>
+                                </select>
+                            </h5>
+                            <h6><input type='submit' value='Save'></h6>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class='row arduino'>
+                <div class='col-lg-12'>
+                    <div class='clear'></div>
+                    <h6> You can go <a href='/'>back.</a></h6>
+
+                    <div class='clear'></div>
+                    <h6> <a href='http://www.litmath.com'>Visit our web site Litmath, LLC</a></h6>
+                    &nbsp&nbsp&nbsp&nbsp
+                    <h6> Copyright Litmath, LLC, 2017 </h6>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>
